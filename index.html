@@ -82,6 +82,39 @@
   <section id="works">
     <h2>School Works</h2>
     <p>This section will contain my uploaded school works, projects, and other academic-related outputs.</p>
+    <div id="calculator">
+    <input type="text" id="calc-display" disabled>
+    <div class="calc-buttons">
+      <button onclick="clearDisplay()">C</button>
+      <button onclick="append('%')">%</button>
+      <button onclick="append('/')">÷</button>
+      <button onclick="backspace()">⌫</button>
+
+      <button onclick="append('7')">7</button>
+      <button onclick="append('8')">8</button>
+      <button onclick="append('9')">9</button>
+      <button onclick="append('*')">×</button>
+
+      <button onclick="append('4')">4</button>
+      <button onclick="append('5')">5</button>
+      <button onclick="append('6')">6</button>
+      <button onclick="append('-')">−</button>
+
+      <button onclick="append('1')">1</button>
+      <button onclick="append('2')">2</button>
+      <button onclick="append('3')">3</button>
+      <button onclick="append('+')">+</button>
+
+      <button onclick="append('0')">0</button>
+      <button onclick="append('.')">.</button>
+      <button onclick="calculate()">=</button>
+      <button onclick="toggleDark()">🌙</button>
+    </div>
+    <div id="history">
+      <h4>History</h4>
+      <ul id="history-list"></ul>
+    </div>
+  </div>
   </section>
 
   <section id="resume">
