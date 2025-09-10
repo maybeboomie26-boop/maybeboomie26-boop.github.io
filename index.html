@@ -159,50 +159,69 @@
 
 <section id="works">
   <h2>School Works</h2>
-  <p>This section will contain my uploaded school works, projects, and other academic-related outputs.</p>
+  <p>This section is divided into Computer Programming and Computer Fundamentals projects.</p>
 
-  <!-- First Work: Calculator -->
+  <!-- Computer Programming -->
   <div class="work-item">
-    <h3>Calculator Project</h3>
-    <div id="calculator">
-      <input type="text" id="calc-display" disabled>
-      <div class="calc-buttons">
-        <button onclick="clearDisplay()">C</button>
-        <button onclick="append('%')">%</button>
-        <button onclick="append('/')">÷</button>
-        <button onclick="backspace()">⌫</button>
+    <h3>💻 Computer Programming</h3>
 
-        <button onclick="append('7')">7</button>
-        <button onclick="append('8')">8</button>
-        <button onclick="append('9')">9</button>
-        <button onclick="append('*')">×</button>
+    <!-- First Work: Calculator -->
+    <div class="sub-work">
+      <h4>🧮 Calculator Project</h4>
+      <div id="calculator">
+        <input type="text" id="calc-display" disabled>
+        <div class="calc-buttons">
+          <button onclick="clearDisplay()">C</button>
+          <button onclick="append('%')">%</button>
+          <button onclick="append('/')">÷</button>
+          <button onclick="backspace()">⌫</button>
 
-        <button onclick="append('4')">4</button>
-        <button onclick="append('5')">5</button>
-        <button onclick="append('6')">6</button>
-        <button onclick="append('-')">−</button>
+          <button onclick="append('7')">7</button>
+          <button onclick="append('8')">8</button>
+          <button onclick="append('9')">9</button>
+          <button onclick="append('*')">×</button>
 
-        <button onclick="append('1')">1</button>
-        <button onclick="append('2')">2</button>
-        <button onclick="append('3')">3</button>
-        <button onclick="append('+')">+</button>
+          <button onclick="append('4')">4</button>
+          <button onclick="append('5')">5</button>
+          <button onclick="append('6')">6</button>
+          <button onclick="append('-')">−</button>
 
-        <button onclick="append('0')">0</button>
-        <button onclick="append('.')">.</button>
-        <button onclick="calculate()">=</button>
-        <button onclick="toggleDark()">🌙</button>
+          <button onclick="append('1')">1</button>
+          <button onclick="append('2')">2</button>
+          <button onclick="append('3')">3</button>
+          <button onclick="append('+')">+</button>
+
+          <button onclick="append('0')">0</button>
+          <button onclick="append('.')">.</button>
+          <button onclick="calculate()">=</button>
+          <button onclick="toggleDark()">🌙</button>
+        </div>
+        <div id="history">
+          <h4>History</h4>
+          <ul id="history-list"></ul>
+        </div>
       </div>
-      <div id="history">
-        <h4>History</h4>
-        <ul id="history-list"></ul>
-      </div>
+    </div>
+
+    <!-- Second Work: Conditional Program -->
+    <div class="sub-work">
+      <h4>🔢 Even or Odd Checker</h4>
+      <p>Enter a number and find out if it’s even or odd.</p>
+      <input type="number" id="numberInput" placeholder="Enter number">
+      <button onclick="checkEvenOdd()">Check</button>
+      <p id="result"></p>
     </div>
   </div>
 
-  <!-- Second Work: Data Sheet -->
+  <!-- Computer Fundamentals -->
   <div class="work-item">
-    <h3>Data Sheet</h3>
-    <a href="DataSheet_Aguana.xlsx" download>Download File</a>
+    <h3>📘 Computer Fundamentals</h3>
+
+    <!-- First Work: Data Sheet -->
+    <div class="sub-work">
+      <h4>📊 Data Sheet</h4>
+      <a href="DataSheet_Aguana.xlsx" download>Download Excel File</a>
+    </div>
   </div>
 </section>
 
@@ -259,6 +278,14 @@
   function toggleDark() {
     document.body.classList.toggle("dark-mode");
   }
+
+  function checkEvenOdd() {
+  const num = document.getElementById("numberInput").value;
+  const result = document.getElementById("result");
+  if (num === "") {
+    result.textContent = "Please enter a number.";
+  }
+
 </script>
 </body>
 </html>
