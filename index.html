@@ -237,27 +237,38 @@
     </div>
   </div>
         <!-- grading sys -->
-  <div class="work-item">
+<div class="work-item">
   <h3>📊 Student Grading System</h3>
-  <p>This program calculates a student's final grade based on quizzes, activities, and major exams. It ensures inputs are within valid ranges and outputs results with proper percentage formatting.</p>
+  <p>This program calculates a student's final grade based on quizzes, activities, and major exams, categorized by Prelim, Midterm, and Finals.</p>
 
   <div id="grading-system">
-    <label>Enter 6 Quiz Scores (50 - 100):</label><br>
-    <input type="number" id="quiz1" min="50" max="100"> 
-    <input type="number" id="quiz2" min="50" max="100"> 
-    <input type="number" id="quiz3" min="50" max="100"> 
-    <input type="number" id="quiz4" min="50" max="100"> 
-    <input type="number" id="quiz5" min="50" max="100"> 
+    <label>Full Name:</label><br>
+    <input type="text" id="studentName" placeholder="Enter full name"><br><br>
+
+    <label>USN:</label><br>
+    <input type="text" id="studentUSN" placeholder="Enter USN"><br><br>
+
+    <h4>📘 Quizzes (50 - 100)</h4>
+    <label>Prelim Quizzes:</label><br>
+    <input type="number" id="quiz1" min="50" max="100">
+    <input type="number" id="quiz2" min="50" max="100"><br><br>
+
+    <label>Midterm Quizzes:</label><br>
+    <input type="number" id="quiz3" min="50" max="100">
+    <input type="number" id="quiz4" min="50" max="100"><br><br>
+
+    <label>Finals Quizzes:</label><br>
+    <input type="number" id="quiz5" min="50" max="100">
     <input type="number" id="quiz6" min="50" max="100"><br><br>
 
-    <label>Enter 3 Activity Scores (0 - 100):</label><br>
-    <input type="number" id="activity1" min="0" max="100"> 
-    <input type="number" id="activity2" min="0" max="100"> 
+    <h4>📝 Activities (0 - 100)</h4>
+    <input type="number" id="activity1" min="0" max="100">
+    <input type="number" id="activity2" min="0" max="100">
     <input type="number" id="activity3" min="0" max="100"><br><br>
 
-    <label>Enter 3 Major Exam Scores (0 - 100):</label><br>
-    <input type="number" id="exam1" min="0" max="100"> 
-    <input type="number" id="exam2" min="0" max="100"> 
+    <h4>📚 Major Exams (0 - 100)</h4>
+    <input type="number" id="exam1" min="0" max="100">
+    <input type="number" id="exam2" min="0" max="100">
     <input type="number" id="exam3" min="0" max="100"><br><br>
 
     <button onclick="calculateGrade()">Calculate Final Grade</button>
@@ -269,6 +280,7 @@
     </a>
   </div>
 </div>
+
  
   <!-- Computer Fundamentals Section -->
   <div class="work-item" id="comp-fun">
@@ -352,7 +364,11 @@ function checkEvenOdd() {
   }
 }
 
+
 function calculateGrade() {
+  const name = document.getElementById("studentName").value || "Unknown Student";
+  const usn = document.getElementById("studentUSN").value || "N/A";
+
   const q = [quiz1, quiz2, quiz3, quiz4, quiz5, quiz6].map(q => Math.min(100, Math.max(50, parseInt(q.value) || 0)));
   const a = [activity1, activity2, activity3].map(a => Math.min(100, Math.max(0, parseInt(a.value) || 0)));
   const e = [exam1, exam2, exam3].map(e => Math.min(100, Math.max(0, parseInt(e.value) || 0)));
@@ -368,7 +384,8 @@ function calculateGrade() {
   const result = overallFinal >= 75 ? "✅ Passed" : "❌ Failed";
 
   document.getElementById("grade-output").innerHTML = `
-    <strong>📊 Final Results:</strong><br>
+    <strong>Student:</strong> ${name}<br>
+    <strong>USN:</strong> ${usn}<br><br>
     📘 Quiz Final: ${quizFinal.toFixed(2)}%<br>
     📝 Activity Final: ${activityFinal.toFixed(2)}%<br>
     📚 Major Exam Final: ${majorExamFinal.toFixed(2)}%<br>
@@ -378,6 +395,7 @@ function calculateGrade() {
     🏁 Result: <strong>${result}</strong>
   `;
 }
+
 
 
 </script>
