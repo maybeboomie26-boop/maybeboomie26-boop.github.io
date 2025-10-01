@@ -239,37 +239,68 @@
         <!-- grading sys -->
 <div class="work-item">
   <h3>📊 Student Grading System</h3>
-  <p>This program calculates a student's final grade based on quizzes, activities, and major exams, categorized by Prelim, Midterm, and Finals.</p>
+  <p>This program calculates a student's final grade based on quizzes, activities, and major exams — all categorized by Prelim, Midterm, and Finals.</p>
 
   <div id="grading-system">
     <label>Full Name:</label><br>
-    <input type="text" id="studentName" placeholder="Enter full name"><br><br>
+    <input type="text" id="studentName" placeholder="Enter full name" style="width:100%;"><br><br>
 
     <label>USN:</label><br>
-    <input type="text" id="studentUSN" placeholder="Enter USN"><br><br>
+    <input type="text" id="studentUSN" placeholder="Enter USN" style="width:100%;"><br><br>
 
+    <!-- Quizzes -->
     <h4>📘 Quizzes (50 - 100)</h4>
-    <label>Prelim Quizzes:</label><br>
-    <input type="number" id="quiz1" min="50" max="100">
-    <input type="number" id="quiz2" min="50" max="100"><br><br>
+    <div style="display:flex; gap:10px;">
+      <div style="flex:1;">
+        <label>Prelim:</label><br>
+        <input type="number" id="quiz1" min="50" max="100">
+        <input type="number" id="quiz2" min="50" max="100">
+      </div>
+      <div style="flex:1;">
+        <label>Midterm:</label><br>
+        <input type="number" id="quiz3" min="50" max="100">
+        <input type="number" id="quiz4" min="50" max="100">
+      </div>
+      <div style="flex:1;">
+        <label>Finals:</label><br>
+        <input type="number" id="quiz5" min="50" max="100">
+        <input type="number" id="quiz6" min="50" max="100">
+      </div>
+    </div><br>
 
-    <label>Midterm Quizzes:</label><br>
-    <input type="number" id="quiz3" min="50" max="100">
-    <input type="number" id="quiz4" min="50" max="100"><br><br>
-
-    <label>Finals Quizzes:</label><br>
-    <input type="number" id="quiz5" min="50" max="100">
-    <input type="number" id="quiz6" min="50" max="100"><br><br>
-
+    <!-- Activities -->
     <h4>📝 Activities (0 - 100)</h4>
-    <input type="number" id="activity1" min="0" max="100">
-    <input type="number" id="activity2" min="0" max="100">
-    <input type="number" id="activity3" min="0" max="100"><br><br>
+    <div style="display:flex; gap:10px;">
+      <div style="flex:1;">
+        <label>Prelim:</label><br>
+        <input type="number" id="activity1" min="0" max="100">
+      </div>
+      <div style="flex:1;">
+        <label>Midterm:</label><br>
+        <input type="number" id="activity2" min="0" max="100">
+      </div>
+      <div style="flex:1;">
+        <label>Finals:</label><br>
+        <input type="number" id="activity3" min="0" max="100">
+      </div>
+    </div><br>
 
+    <!-- Major Exams -->
     <h4>📚 Major Exams (0 - 100)</h4>
-    <input type="number" id="exam1" min="0" max="100">
-    <input type="number" id="exam2" min="0" max="100">
-    <input type="number" id="exam3" min="0" max="100"><br><br>
+    <div style="display:flex; gap:10px;">
+      <div style="flex:1;">
+        <label>Prelim:</label><br>
+        <input type="number" id="exam1" min="0" max="100">
+      </div>
+      <div style="flex:1;">
+        <label>Midterm:</label><br>
+        <input type="number" id="exam2" min="0" max="100">
+      </div>
+      <div style="flex:1;">
+        <label>Finals:</label><br>
+        <input type="number" id="exam3" min="0" max="100">
+      </div>
+    </div><br>
 
     <button onclick="calculateGrade()">Calculate Final Grade</button>
 
@@ -280,7 +311,6 @@
     </a>
   </div>
 </div>
-
  
   <!-- Computer Fundamentals Section -->
   <div class="work-item" id="comp-fun">
@@ -384,8 +414,8 @@ function calculateGrade() {
   const result = overallFinal >= 75 ? "✅ Passed" : "❌ Failed";
 
   document.getElementById("grade-output").innerHTML = `
-    <strong>Student:</strong> ${name}<br>
-    <strong>USN:</strong> ${usn}<br><br>
+    <strong>👤 Student:</strong> ${name}<br>
+    <strong>🆔 USN:</strong> ${usn}<br><br>
     📘 Quiz Final: ${quizFinal.toFixed(2)}%<br>
     📝 Activity Final: ${activityFinal.toFixed(2)}%<br>
     📚 Major Exam Final: ${majorExamFinal.toFixed(2)}%<br>
