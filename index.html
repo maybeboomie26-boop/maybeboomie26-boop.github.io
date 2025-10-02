@@ -411,18 +411,18 @@ function calculateGrade() {
   const faceToFaceFinal = (activityFinal + majorExamFinal) / 2;
   const overallFinal = Math.round((lmsFinal + faceToFaceFinal) / 2);
 
-  const result = overallFinal >= 75 ? "✅ Passed" : "❌ Failed";
+  const result = overallFinal >= 75 ? " Passed" : " Failed";
 
   document.getElementById("grade-output").innerHTML = `
-    <strong>👤 Student:</strong> ${name}<br>
-    <strong>🆔 USN:</strong> ${usn}<br><br>
-    📘 Quiz Final: ${quizFinal.toFixed(2)}%<br>
-    📝 Activity Final: ${activityFinal.toFixed(2)}%<br>
-    📚 Major Exam Final: ${majorExamFinal.toFixed(2)}%<br>
-    💻 LMS Final: ${lmsFinal.toFixed(2)}%<br>
-    🏫 Face-to-Face Final: ${faceToFaceFinal.toFixed(2)}%<br>
-    🎓 Overall Final Grade: <strong>${overallFinal}%</strong><br>
-    🏁 Result: <strong>${result}</strong>
+    <strong> Student:</strong> ${name}<br>
+    <strong> USN:</strong> ${usn}<br><br>
+     Quiz Final: ${quizFinal.toFixed(2)}%<br>
+     Activity Final: ${activityFinal.toFixed(2)}%<br>
+     Major Exam Final: ${majorExamFinal.toFixed(2)}%<br>
+     LMS Final: ${lmsFinal.toFixed(2)}%<br>
+     Face-to-Face Final: ${faceToFaceFinal.toFixed(2)}%<br>
+     Overall Final Grade: <strong>${overallFinal}%</strong><br>
+     Result: <strong>${result}</strong>
   `;
 }
 
